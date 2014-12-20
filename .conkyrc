@@ -1,0 +1,59 @@
+alignment top_right
+background yes
+xftalpha 1
+border_width 1
+cpu_avg_samples 2
+default_color dd3333
+default_outline_color 000000
+default_shade_color 000000
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+override_utf8_locale yes
+xftfont IPAPGothic:bold:size=12
+gap_x 10
+gap_y 20
+minimum_size 5 5
+maximum_width 440
+net_avg_samples 2
+no_buffers yes
+double_buffer yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_transparent yes
+own_window_class Conky
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour black
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+${color AA3333}Hostname:$color $nodename
+${color AA3333}Uptime:$color $uptime
+${color AA3333}Kernel:$color $kernel
+
+${font IPAPGothic:size=9}CPU:${execi 43200 cat /proc/cpuinfo | grep "model name" |awk -F: '{print $2}'}${font}
+${font StyleBats:size=16}A${font} ${cpubar cpu0 5,270} ${alignr}${cpu cpu0}%
+${cpugraph cpu0 35,340 000000 ff3333}
+${font IPAPGothic:size=9}MEM: mem / $memmax ${font}
+${font StyleBats:size=16}C${font} ${membar 5,270} ${alignr}${memperc}%
+${memgraph 35,340 000000 ff3333}
+${font IPAPGothic:size=9}HDD: ${fs_used /} / ${fs_size /}${font}
+${font StyleBats:size=16}U${font} ${fs_bar 5,270 /} ${alignr}${fs_used_perc /}%
+${font IPAPGothic:size=9}diskio_read ${diskio_read} ${alignr}diskio_write ${diskio_write}
+${diskiograph_read /dev/sda 35,160 000000 ff33333} ${alignr}${diskiograph_write /dev/sda 35,160 000000 ff33333}
+${font StyleBats:size=16}W${font} ${font IPAPGothic:size=9}eth0 : ${addr eth0}${font}
+${font IPAPGothic:size=9}Up${alignr}Down${font}
+${upspeedgraph eth0 35,160}${alignr}${downspeedgraph eth0 35,160}
+${font IPAPGothic:size=9}${upspeed eth0} ${alignr} ${downspeed eth0}${font}
+
+
