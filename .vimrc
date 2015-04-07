@@ -33,7 +33,7 @@ set expandtab
 
 "NeoBundle
 set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'plasticboy/vim-markdown'
@@ -41,6 +41,5 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
-
 
 au BufRead,BufNewFile *.md set filetype=markdown
