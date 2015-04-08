@@ -1,6 +1,11 @@
+emmet-vim
 neobundle.vim
 neocomplete-php.vim
 neocomplete.vim
+neosnippet
+neosnippet-snippets
 open-browser.vim
 previm
+syntastic
+taglist.vim
 vim-markdown

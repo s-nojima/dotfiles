@@ -122,6 +122,28 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 NeoBundle 'violetyk/neocomplete-php.vim'
 let g:neocomplete_php_locale = 'ja'
 
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+NeoBundle 'mattn/emmet-vim'
+"let g:user_emmet_leader_key='<c-y>'
+
+NeoBundle 'taglist.vim'
+set tags=~/dotfiles/.vim/tags
+
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_echo_current_error = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_php_php_args = '-l'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 call neobundle#end()
 
 au BufRead,BufNewFile *.md set filetype=markdown
