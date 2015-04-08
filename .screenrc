@@ -8,7 +8,7 @@ defscrollback 10000
 
 termcapinfo xterm* ti@:te@
 
-# log
+# alog
 logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
 deflog on
 
