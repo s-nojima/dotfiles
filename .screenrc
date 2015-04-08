@@ -1,10 +1,16 @@
-encoding utf-8
+oncoding utf-8
 
 # stertup message off
 startup_message off
 
 # scrollbaffer
 defscrollback 10000
+
+termcapinfo xterm* ti@:te@
+
+# log
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+deflog on
 
 # escape key
 escape ^Zz
