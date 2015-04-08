@@ -1,4 +1,6 @@
 neobundle.vim
+neocomplete-php.vim
+neocomplete.vim
 open-browser.vim
 previm
 vim-markdown
