@@ -39,8 +39,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-
-
+NeoBundle 'scrooloose/nerdtree'
+autocmd vimenter * NERDTree|normal gg3j
+let g:nerdtree_tabs_smart_startup_focus=1
 
 NeoBundle 'Shougo/neocomplete.vim'
 
@@ -132,6 +133,9 @@ NeoBundle 'mattn/emmet-vim'
 
 NeoBundle 'taglist.vim'
 set tags=~/dotfiles/.vim/tags
+let Tlist_Use_Right_Window   = 1
+autocmd vimenter * Tlist
+let Tlist_Auto_Open = 1
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_check_on_open = 1

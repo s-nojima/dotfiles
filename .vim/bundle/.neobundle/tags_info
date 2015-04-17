@@ -4,6 +4,7 @@ neocomplete-php.vim
 neocomplete.vim
 neosnippet
 neosnippet-snippets
+nerdtree
 open-browser.vim
 previm
 syntastic
