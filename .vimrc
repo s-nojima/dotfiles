@@ -5,9 +5,6 @@ set wildmenu
 set browsedir=buffer
 set background=dark
 set hidden
-syntax on
-colorscheme desert
-highlight LineNr ctermfg=darkyellow
 filetype indent plugin on
 "standard option
 
@@ -27,7 +24,7 @@ set laststatus=2
 "indent action 
 set autoindent
 set tabstop=2
-set shiftwidth=2
+set shiftwidth=4
 set smarttab
 set expandtab
 
@@ -35,13 +32,15 @@ set expandtab
 set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/nerdtree'
 autocmd vimenter * NERDTree|normal gg3j
-let g:nerdtree_tabs_smart_startup_focus=1
+let g:nerdtree_tabs_smart_startup_focus = 1
+let g:NERDTreeShowHidden = 1
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 NeoBundle 'Shougo/neocomplete.vim'
 
@@ -91,26 +90,26 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
  
 " For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
+inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
+inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
+inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
+inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
 " Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
+let g:neocomplete#enable_cursor_hold_i = 1
 " Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
+let g:neocomplete#enable_insert_char_pre = 1
  
 " AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 1
  
 " Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+set completeopt+=longest
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#disable_auto_complete = 1
+inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
  
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -148,6 +147,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
+
 call neobundle#end()
 
-au BufRead,BufNewFile *.md set filetype=markdown
+colorscheme evening
+syntax on
