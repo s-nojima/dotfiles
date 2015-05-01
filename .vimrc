@@ -62,7 +62,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'php': $HOME.'/.vim/dict/php.dict',
     \ 'scheme': $HOME.'/.vim/dict/scheme.dict',
     \ 'vim': $HOME.'/.vim/dict/vim.dict'
-    \ }
+   \ }
  
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -128,12 +128,11 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
 NeoBundle 'mattn/emmet-vim'
-"let g:user_emmet_leader_key='<c-y>'
+let g:user_emmet_leader_key='<c-y>'
 
 NeoBundle 'taglist.vim'
 set tags=~/dotfiles/.vim/tags
 let Tlist_Use_Right_Window   = 1
-autocmd vimenter * Tlist
 let Tlist_Auto_Open = 1
 
 NeoBundle 'scrooloose/syntastic'
