@@ -42,10 +42,15 @@ let g:NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 NeoBundle 'taglist.vim'
-set tags=~/dotfiles/.vim/tags
+set tags=~/.vim/tags
 let Tlist_Use_Right_Window   = 1
 let Tlist_Auto_Open = 0
 nnoremap <silent><C-t> :Tlist<CR>
+
+NeoBundle 'wesleyche/SrcExpl'
+let g:SrcExpl_RefreshTime = 1
+let g:SrcExpl_UpdateTags = 1
+nnoremap <silent><F8> :SrcExplToggle<CR>
 
 "NeoBundle 'Shougo/neocomplete.vim'
 "let g:neocomplete#enable_at_startup = 1
