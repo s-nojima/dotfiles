@@ -86,10 +86,13 @@ autocmd FileType javascript :set dictionary=$HOME/.vim/dict/javascript.dict,$HOM
 "NeoBundle 'violetyk/neocomplete-php.vim'
 "let g:neocomplete_php_locale = 'ja'
 
+NeoBundle 'Townk/vim-autoclose'
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
 
 
 NeoBundle 'scrooloose/syntastic'
