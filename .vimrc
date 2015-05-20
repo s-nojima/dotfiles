@@ -52,6 +52,9 @@ let g:SrcExpl_RefreshTime = 1
 let g:SrcExpl_UpdateTags = 1
 nnoremap <silent><F8> :SrcExplToggle<CR>
 
+NeoBundle 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
+
 "NeoBundle 'Shougo/neocomplete.vim'
 "let g:neocomplete#enable_at_startup = 1
 "let g:neocomplete#enable_smart_case = 1
