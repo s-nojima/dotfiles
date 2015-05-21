@@ -10,7 +10,7 @@ no_buffers yes
 text_buffer_size 2048
 
 gap_x 1300
-gap_y 200
+gap_y 0
 #minimum_size 600 1520
 maximum_width 1050
 
@@ -27,7 +27,7 @@ own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 #border_outer_margin 0
 
 border_width 0
-alignment bottom_right
+alignment top_right
 
 draw_shades no
 draw_outline no
@@ -61,6 +61,10 @@ color5 FF5555
 
 
 TEXT
-#${voffset 10}
 ${font IPAPGothic:size=12,weight:bold}${color1}
 ${rss http://feeds.trendmicro.com/TM-SecurityBlog?format=xml 10 item_titles 10}
+${font IPAPGothic:size=12,weight:bold}${color1}
+${rss http://feeds.trendmicro.com/jp/SecurityAdvisories 10 item_titles 10}
+
+${font Ubuntu:size=10,weight:bold}${color5}NEW VIRUS LIST 
+${rss http://feeds.trendmicro.com/jp/NewestMalware 10 item_titles 10}
