@@ -306,6 +306,9 @@ function go_gauge_rings(display)
         str = string.format('${%s %s}',data['name'], data['arg'])
         str = conky_parse(str)
         value = tonumber(str)
+        if not value then
+            value=0
+        end
         draw_gauge_ring(display, data, value)
     end
     
