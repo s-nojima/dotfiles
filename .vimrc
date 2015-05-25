@@ -1,6 +1,6 @@
 set nocompatible
 set noswapfile
-set title
+set notitle
 set wildmenu
 set browsedir=buffer
 set background=dark
