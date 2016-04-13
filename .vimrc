@@ -24,7 +24,7 @@ set laststatus=2
 "indent action 
 set autoindent
 set tabstop=2
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 set expandtab
 
@@ -110,3 +110,10 @@ call neobundle#end()
 
 colorscheme evening
 syntax on
+
+""" markdown {{{
+autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
+" Need: kannokanno/previm
+nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
+" }}}
