@@ -2,6 +2,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kannokanno/previm'
 call vundle#end()
 
 "standard option
@@ -42,4 +43,5 @@ autocmd BufRead,BufNewFile *.md  set filetype=markdown
 " Need: kannokanno/previm
 nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
 " }}}
-"
+nnoremap :tree :NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
