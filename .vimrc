@@ -3,6 +3,8 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kannokanno/previm'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tyru/open-browser.vim'
 call vundle#end()
 
 "standard option
