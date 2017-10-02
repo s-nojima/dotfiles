@@ -39,11 +39,10 @@ set shiftwidth=2
 set smarttab
 set expandtab
 
-""" markdown {{{
 autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
-" Need: kannokanno/previm
+"
+"key map
 nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
-" }}}
 nnoremap :tree :NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
