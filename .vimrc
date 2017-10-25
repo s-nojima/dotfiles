@@ -32,6 +32,10 @@ set nostartofline
 set visualbell
 set laststatus=2
 
+"view tab space
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
 "indent action 
 set autoindent
 set tabstop=2
