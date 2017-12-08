@@ -1,10 +1,10 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=/home/red-c/dotfiles/.vim/bundle/vundle/
+call vundle#rc()
 Bundle 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kannokanno/previm'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tyru/open-browser.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kannokanno/previm'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tyru/open-browser.vim'
 call vundle#end()
 
 "standard option
@@ -47,6 +47,7 @@ autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 "
 "key map
-nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
+vnoremap <silent> <C-p> "0p<CR>
+nnoremap <silent> <C-o> :PrevimOpen<CR> " Ctrl-pでプレビュー
 nnoremap :tree :NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
