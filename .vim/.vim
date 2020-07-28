@@ -1,0 +1,1 @@
+/home/red-c/dotfiles/.vim/

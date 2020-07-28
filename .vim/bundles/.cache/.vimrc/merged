@@ -1,0 +1,3 @@
+{'repo': v:val.repo, 'rev': get(v:val, 'rev', '')}
+0
+[{'rev': '', 'repo': 'Shougo/dein.vim'}, {'rev': '', 'repo': 'jacoborus/tender.vim'}, {'rev': '', 'repo': 'junegunn/fzf'}, {'rev': '', 'repo': 'junegunn/fzf.vim'}, {'rev': '', 'repo': 'mattn/emmet-vim'}, {'rev': '', 'repo': 'mattn/vim-maketable'}, {'rev': '', 'repo': 'previm/previm'}, {'rev': '', 'repo': 'rcmdnk/vim-markdown'}, {'rev': '', 'repo': 'scrooloose/nerdtree'}, {'rev': '', 'repo': 'tyru/open-browser.vim'}]
