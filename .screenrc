@@ -14,7 +14,7 @@ logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
 deflog on
 
 # escape key
-escape ^Zz
+escape ^Jj
 
 # detach on hangup
 autodetach on
