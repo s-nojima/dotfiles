@@ -19,7 +19,7 @@ set listchars=tab:».,trail:_,eol:↲,extends:»,precedes:«,nbsp:%
 
 function! SOLSpaceHilight()
     syntax match SOLSpace "^\s\+" display containedin=ALL
-    highlight SOLSpace term=underline ctermbg=LightGray
+    highlight SOLSpace term=underline ctermbg=DarkGray
 endf
 function! JISX0208SpaceHilight()
     syntax match JISX0208Space "　" display containedin=ALL
