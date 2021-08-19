@@ -1,50 +1,48 @@
-if &compatible
-  set nocompatible
-endif
+" dein.vim settings {{{
+" install dir {{{
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
 
-let s:dein_dir = expand('~/.vim/bundles')
-
-let s:dein_repo_dir = s:dein_dir . '~dein.vim'
-
-" dein.vimが存在していない場合はgithubからclone
-if &runtimepath !~# '/dein.vim'
+" dein installation check {{{
+if &runtimepath !~# '~/.vim/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
+" }}}
 
+" begin settings {{{
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let s:toml_dir = expand('~/.vim')
+  " .toml file
+  let s:rc_dir = expand('~/.vim')
+  if !isdirectory(s:rc_dir)
+    call mkdir(s:rc_dir, 'p')
+  endif
+  let s:toml = s:rc_dir . '~/.vim/dein.toml'
 
-  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  " read toml and cache
+  call dein#load_toml(s:toml, {'lazy': 0})
 
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
-
+  " end settings
   call dein#end()
   call dein#save_state()
 endif
+" }}}
 
-filetype plugin indent on
-syntax enable
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-" If you want to install not installed plugins on startup.
+" plugin installation check {{{
 if dein#check_install()
   call dein#install()
 endif
+" }}}
 
-autocmd vimenter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
-let g:user_emmet_leader_key='<c-t>'
-syntax enable
-colorscheme tender
-vnoremap <silent> <C-p> "0p<CR>
-let g:vim_markdown_folding_disabled=1
-let g:previm_enable_realtime = 1
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+" }}}
