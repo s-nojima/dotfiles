@@ -34,7 +34,46 @@ if has("syntax")
     augroup END
 endif
 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"dein Scripts-----------------------------
+if &compatible
+    set nocompatible               " Be iMproved
+    endif
+
+    " Required:
+    set runtimepath+=/home/red-c/.cache/dein/repos/github.com/Shougo/dein.vim
+
+    " Required:
+    call dein#begin('/home/red-c/.cache/dein')
+
+    " Let dein manage dein
+    " Required:
+    call dein#add('/home/red-c/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+    " Add or remove your plugins here like this:
+    call dein#add('Shougo/neosnippet.vim')
+    call dein#add('Shougo/neosnippet-snippets')
+    call dein#add('preservim/nerdtree')
+
+    " Required:
+    call dein#end()
+
+    " Required:
+    filetype plugin indent on
+    syntax enable
+
+    " If you want to install not installed plugins on startup.
+    if dein#check_install()
+      call dein#install()
+    endif
+
+"End dein Scripts-------------------------
+
+
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " lhs comments
 vmap ,# :s/^/#/<CR>:nohlsearch<CR>
