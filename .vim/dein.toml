@@ -27,3 +27,6 @@ repo = 'junegunn/fzf.vim'
 
 [[plugins]]
 repo = 'mattn/vim-maketable'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
