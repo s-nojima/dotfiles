@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #ln -sf ~/dotfiles/.screenrc ~/.screenrc
-ln -sf ~/dotfiles/init.lua ~/.config/nvim/init.lua
+ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 #ln -sf ~/dotfiles/.vimrc ~/.vimrc
 #ln -sf ~/dotfiles/.vim/ ~/.vim
 #ln -sf ~/dotfiles/.lftprc ~/.lftprc
